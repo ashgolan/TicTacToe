@@ -55,7 +55,6 @@ myVars.submitNewGame.addEventListener("click", function (event) {
   event.preventDefault();
   if (myVars.ply2Name.value === "Computer") myVars.isComputerPlay = true;
   else myVars.isComputerPlay = false;
-  console.log(myVars.ply2Name.value, myVars.isComputerPlay);
   if (
     myVars.ply1Name.value === "" ||
     myVars.ply2Name.value === "" ||
@@ -90,14 +89,7 @@ myVars.submitNewGame.addEventListener("click", function (event) {
     countUp();
   }
 });
-// myVars.player1Score.addEventListener("change", function (e) {
-//   console.log(e);
-//   e.classList.add("changeScores");
-// });
-// myVars.player2Score.addEventListener("change", function (e) {
-//   console.log(e);
-//   e.classList.add("changeScores");
-// });
+
 let countingDown;
 const countDown = function () {
   let seconds = myVars.boardLength * 10;
@@ -210,12 +202,8 @@ const createABoard = function () {
             color = "rgb(0, 217, 255)";
             myVars.activatedChar = "O";
           }
-          // myVars.isPlayer1 = false;
         }
 
-        // else {
-        //   myVars.isPlayer1 = true;
-        // }
         let placeOfLi;
         let placeOfUl;
 
@@ -236,13 +224,10 @@ const createABoard = function () {
         }
         myVars.isPlayer1 = !myVars.isPlayer1;
 
-        console.log(`1 ${myVars.isPlayer1}`);
         if (myVars.isComputerPlay) {
           if (!myVars.isWin) {
             // myVars.isPlayer1 = false;
             if (myVars.isComputerPlay) {
-              console.log(`2 ${myVars.isPlayer1}`);
-
               const fillCells = [];
               for (let i = 0; i < myVars.arrOfTheBoard.length; i++) {
                 for (let j = 0; j < myVars.arrOfTheBoard[i].length; j++) {
@@ -252,12 +237,9 @@ const createABoard = function () {
                 }
               }
               if (fillCells.length !== 0) {
-                console.log(`3 ${myVars.isPlayer1}`);
-
                 let computerChoice = Math.floor(
                   Math.random() * fillCells.length
                 );
-                console.log(fillCells);
                 placeOfLi = fillCells[computerChoice][1];
                 placeOfUl = fillCells[computerChoice][0];
                 placeUlInPage =
@@ -270,16 +252,13 @@ const createABoard = function () {
                 placeLiInPage.textContent = myVars.activatedChar;
                 myVars.arrOfTheBoard[placeOfUl][placeOfLi] =
                   myVars.activatedChar === "X" ? 1 : 0;
-                console.log(computerChoice, fillCells[0]);
                 fillCells.length = 0;
-                console.log(`4 ${myVars.isPlayer1}`);
                 myVars.sendFromPc = true;
                 checkIfWin();
               }
             }
           }
         }
-        // myVars.isPlayer1 = !myVars.isPlayer1;
       }
     });
   });
@@ -339,7 +318,6 @@ const addToScore = function () {
     let scoreOfPlayer1 = Number(myVars.player1Score.textContent);
     let scoreOfPlayer2 = Number(myVars.player2Score.textContent);
     // if (myVars.isPlayer1 === false) {
-    console.log(myVars.isComputerPlay, myVars.sendFromPc);
     if (myVars.isComputerPlay) {
       if (myVars.sendFromPc) {
         scoreOfPlayer1++;
@@ -351,16 +329,13 @@ const addToScore = function () {
     } else {
       scoreOfPlayer1++;
     }
-    console.log(scoreOfPlayer1);
 
     myVars.player1Score.textContent = scoreOfPlayer1;
     myVars.player2Score.textContent = scoreOfPlayer2;
-    console.log(myVars.player1Score.textContent);
     setTimeout(() => {
       resetTheBoard();
     }, 2000);
     if (scoreOfPlayer1 === 3 || scoreOfPlayer2 === 3) {
-      console.log(scoreOfPlayer1, scoreOfPlayer2);
       clearInterval(countingDown);
       myVars.audioWinGame.play();
       myVars.countDownDiv.style.display = "none";
