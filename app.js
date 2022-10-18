@@ -144,6 +144,13 @@ const resetTheBoard = function () {
     element.textContent = "-";
     element.style.color = "transparent";
   });
+  if (
+    +myVars.player1Score.textContent === 3 ||
+    +myVars.player2Score.textContent === 3
+  ) {
+    myVars.player1Score.textContent = 0;
+    myVars.player2Score.textContent = 0;
+  }
   clearInterval(countingDown);
   countDown();
 };
@@ -272,6 +279,7 @@ myVars.reset.addEventListener("click", function () {
   myVars.boardSpace.style.display = "flex";
   myVars.TheWinner.style.display = "none";
   myVars.winnerName.textContent = "";
+  console.log(myVars.player1Score.textContent, myVars.player2Score.textContent);
 });
 
 const checkIfWin = function () {
