@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/normalize.css" />
+    <link rel="stylesheet" href="/styles/mobile.css" />
+  </head>
+  <body>
+    <div class="nav">
+      <h3 class="title">Tic Tac Toe</h3>
+      <div class="scores">
+        <label class="ply1-score" for="">0</label>
+        <label style="color: white" class="between-scores" for="">:</label>
+        <label class="ply2-score" for="">0</label>
+      </div>
+      <div class="side-bar">
+        <button class="reset-btn">Reset</button>
+        <button class="new-btn">New</button>
+      </div>
+    </div>
+    <div class="big-container">
+      <div class="players-container">
+        <div class="count-up"></div>
+        <div class="count-down"></div>
+        <div class="ply1-container">
+          <img src="/img/person1withborder2.png" alt="" />
+          <label class="ply1-name" for="">Player 1</label>
+        </div>
+        <img class="vs-photo" src="/img/733582.jpg" alt="" />
+        <div class="ply2-container">
+          <img src="/img/person1withborder1.png" alt="" />
+          <label class="ply2-name" for="">Player 2</label>
+        </div>
+      </div>
+      <audio
+        class="audio"
+        src="/audio/mixkit-mouse-click-close-1113.wav"
+      ></audio>
+      <div class="game-container">
+        <div class="board-space"></div>
+        <div class="the-winner">
+          <label for="" class="winner-name"></label>
+          <div class="players-amount">
+            <div class="players-amount-space">
+              <label class="player1-amount" for=""></label>
+              <label class="player2-amount" for=""></label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="time"></div>
+    </div>
+    <div class="new-game-form">
+      <form class="setting-form" action="">
+        <div class="setName-ply-1">
+          <label class="settings" for="">Player 1:</label
+          ><input class="set-ply1-name" type="text" />
+        </div>
+        <div class="setName-ply-2">
+          <label class="settings" for="">Player 2:</label
+          ><input class="set-ply2-name" type="text" />
+        </div>
+        <div class="setBoard-size">
+          <label class="settings" for="">Board Size:</label
+          ><input class="set-board-size" type="number" min="3" max="10" />
+        </div>
+
+        <label class="error-message" for=""
+          >The names and the size bords are required</label
+        >
+        <div class="submit-and-pc">
+          <button class="submit" type="submit">Start</button>
+          <img class="pc-photo" src="/img/pc.png" alt="" />
+        </div>
+      </form>
+      <div class="signature">
+        <label for="">All rights reserved</label>
+        <label style="color: rgb(143, 123, 10)" for="">Alaa Shaalan 2022</label>
+      </div>
+    </div>
+    <audio
+      class="audio-win-turn"
+      src="/audio/mixkit-winning-notification-2018.wav"
+    ></audio>
+    <audio
+      class="audio-win-game"
+      src="/audio/mixkit-video-game-win-2016.wav"
+    ></audio>
+  </body>
+  <script src="/app.js"></script>
+</html>
