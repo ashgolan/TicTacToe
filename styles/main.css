@@ -11,81 +11,6 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-@media only screen and (max-width: 491px) {
-  .nav .side-bar,
-  .nav .scores,
-  .nav .title {
-    flex: 1 1 100%;
-  }
-
-  .nav .side-bar .reset-btn,
-  .nav .side-bar .new-btn {
-    flex: 1 1 10%;
-    border-radius: 0px;
-    font-size: 1rem;
-    padding: 2%;
-  }
-
-  /* .game-container .lines .ga {
-    font-size: 2rem;
-  } */
-  /* .big-container .game-container {
-    flex-direction: column;
-    width: 80%;
-  }
-  .nav .side-bar .reset-btn {
-    width: 100%;
-    margin-bottom: 2%;
-    border-radius: 0;
-  }
-  .big-container .vs-photo {
-    max-width: 25%;
-    max-height: 25%;
-  }
-  .nav .side-bar .reset-btn {
-    width: 60%;
-    margin-top: 15%;
-  } */
-}
-@media (min-width: 401px) and (max-width: 800px) {
-  .new-game-form {
-    width: 100%;
-  }
-  .new-game-form .setting-form {
-    width: 100%;
-  }
-
-  /* .big-container .players-container {
-    margin: 10% 0%;
-  }
-  .ply1-container,
-  .ply2-container {
-    width: 40%;
-  }
-  .big-container .vs-photo {
-    max-width: 20%;
-    max-height: 80%;
-  }
-  .big-container .game-container {
-    width: 80%;
-    height: 30%;
-  } */
-  /* .big-container .game-container .ga {
-    font-size: 5rem;
-    width: 60%;
-  } */
-  /* .big-container .reset-btn {
-    width: 80%;
-    height: 7%;
-    margin-bottom: 5%;
-  } */
-}
-
-@media (min-width: 1301px) {
-  /* .big-container .game-container .ga {
-    font-size: 5rem;
-  } */
-}
 .body {
   height: 100vh;
 }
@@ -233,6 +158,7 @@ img {
 .submit-and-pc {
   font-family: "Mochiy Pop One", sans-serif;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   width: 50%;
@@ -330,6 +256,13 @@ img {
   margin: auto;
 }
 .new-game-form .settings {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.setName-ply-1,
+.setName-ply-2,
+.setBoard-size {
   display: flex;
   flex-wrap: wrap;
 }
