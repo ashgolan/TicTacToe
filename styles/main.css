@@ -101,6 +101,7 @@ img {
   flex: 1 1 20%;
   justify-content: center;
   align-items: center;
+  visibility: hidden;
 }
 .ply1-score,
 .ply2-score,

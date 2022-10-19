@@ -5,6 +5,7 @@ const myVars = {
   isComputerPlay: false,
   player1Score: document.querySelector(".ply1-score"),
   player2Score: document.querySelector(".ply2-score"),
+  scoresBoard: document.querySelector(".scores"),
   isPlayer1: true,
   sendFromPc: false,
   reset: document.querySelector(".reset-btn"),
@@ -50,6 +51,7 @@ myVars.newGameBtn.addEventListener("click", function () {
   myVars.formNewGame.style.display = "flex";
   myVars.player1Score.textContent = 0;
   myVars.player2Score.textContent = 0;
+  myVars.scoresBoard.style.visibility = "hidden";
 });
 myVars.submitNewGame.addEventListener("click", function (event) {
   event.preventDefault();
@@ -72,6 +74,7 @@ myVars.submitNewGame.addEventListener("click", function (event) {
     myVars.bigContainer.style.display = "flex";
     myVars.boardSpace.style.display = "flex";
     myVars.TheWinner.style.display = "none";
+    myVars.scoresBoard.style.visibility = "visible";
     myVars.countWins.player1 = 0;
     myVars.countWins.player2 = 0;
     myVars.player1Score.textContent = 0;
